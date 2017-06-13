@@ -17,6 +17,10 @@
   font-size: 80%;
 }
 
+.counter.text(0 - $(".textboxArea").val().length) {
+  color: red;
+}
+
 .composeHeader {
   margin: 10px 0 20px 0;
   font-family:'Roboto Bold', sans-serif;
