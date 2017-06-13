@@ -1,0 +1,26 @@
+.new-tweet {
+  padding: 3px 10px 10px 10px;
+  border-radius: 7px;
+  background-color: #D7D4D4;
+  margin: 0 2em 0 2em;
+}
+
+.textboxArea {
+  padding: 5px;
+  width: 100%;
+}
+
+.counter {
+  float: right;
+  margin: 5px;
+  font-style: italic;
+  font-size: 80%;
+}
+
+.composeHeader {
+  margin: 10px 0 20px 0;
+  font-family:'Roboto Bold', sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
