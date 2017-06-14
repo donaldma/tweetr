@@ -15,22 +15,66 @@ const tweetData =
       "text": "If I have seen further it is by standing on the shoulders of giants"
     },
     "created_at": 1461116232227
+  },
+  {
+    "user": {
+      "name": "Descartes",
+      "avatars": {
+        "small":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_50.png",
+        "regular": "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc.png",
+        "large":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_200.png"
+      },
+      "handle": "@rd" },
+    "content": {
+      "text": "Je pense , donc je suis"
+    },
+    "created_at": 1461113959088
+  },
+  {
+    "user": {
+      "name": "Johann von Goethe",
+      "avatars": {
+        "small":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_50.png",
+        "regular": "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1.png",
+        "large":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_200.png"
+      },
+      "handle": "@johann49"
+    },
+    "content": {
+      "text": "Es ist nichts schrecklicher als eine tätige Unwissenheit."
+    },
+    "created_at": 1461113796368
   }
 ]
 
 $(document).ready(function() {
-  var $tweet = createTweetElement(tweetData[0]);
 
-  // console.log($tweet)
+  function createTweetElement(tweet) {
+    return `
+    <article class="tweet">
+      <header>
+        <span class="tweetsHandle">${tweet.user.handle}</span>
+        <img class="profileAvatar" src=${tweet.user.avatars.regular}>
+        <h2 class="tweetsName">${tweet.user.name}</h2>
+      </header>
+      <p class="tweetBody">
+        ${tweet.content.text}
+      </p>
+      <footer>
+        <span class="date">${tweet.created_at}</span>
+        <i class="fa fa-flag" aria-hidden="true"></i>
+        <i class="fa fa-retweet" aria-hidden="true"></i>
+        <i class="fa fa-heart" aria-hidden="true"></i>
+      </footer>
+    </article>`;
+  };
 
-  $('.tweetsContainer').append($tweet);
+  function renderTweets(tweets) {
+    for(var i = 0; i < tweets.length; i++) {
+      var $tweet = createTweetElement(tweets[i]);
+      $('.tweetsContainer').append($tweet);
+    }
+  }
+
+  renderTweets(tweetData);
 });
-
-// console.log(tweetData[0].user.name  )
-
-
-function createTweetElement(tweetObj) {
-  return `<article class="tweet">${tweetObj.user.name}</article>`;
-}
-
-
