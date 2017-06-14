@@ -17,14 +17,70 @@
   font-size: 80%;
 }
 
-.counter.text(0 - $(".textboxArea").val().length) {
-  color: red;
-}
-
 .composeHeader {
   margin: 10px 0 20px 0;
   font-family:'Roboto Bold', sans-serif;
+  color: #00a087;
   font-size: 22px;
   font-weight: bold;
-  border-bottom: 1px solid black;
+  border-bottom: 2px solid #c2c3c4;
+}
+
+.tweetsContainer {
+  border-radius: 7px;
+  border: 1px solid #c2c3c4;
+  margin: 5em 2em 0 2em;
+}
+
+.tweetsHandle {
+  float: right;
+  margin: 15px 10px 0 0;
+  font-size: 90%;
+}
+
+.profileAvatar {
+  float: left;
+  border-radius: 7px;
+  width: 50px;
+  height: 50px;
+  margin: 10px 10px 0 10px;
+}
+
+.tweetsName {
+  margin: 0 0 0 0;
+  padding-top: 10px;
+  border-radius: 7px;
+  background-color: #e5e5e5;
+  color: #00a087;
+  height: 65px;
+  font-size: 170%;
+}
+
+.tweet p {
+  padding: 30px 0 30px 15px;
+  font-size: 150%;
+}
+
+.tweet footer {
+  border-top: 1px solid #e3e6e8;
+  padding: 10px 0 10px 10px;
+  font-size: 12px;
+}
+
+.tweet footer .fa {
+  margin-left: 1em;
+}
+
+.icons {
+  float: right;
+  padding: 0 10px 10px 0;
+  color: #00a087;
+}
+
+.tweet header {
+  opacity: 0.7;
+}
+
+.tweet:hover header {
+  opacity: 1;
 }
