@@ -3,6 +3,7 @@
   <head>
     <!-- Meta Information -->
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Tweeter - Home Page</title>
 
     <!-- External CSS -->
@@ -31,7 +32,7 @@
 
     <!-- Top nav bar (fixed) -->
     <nav id="nav-bar">
-      <img class="logo" src="/images/bird.png">
+      <img class="logo" src="/images/bird2.ico">
       <span class="header">Tweeter</span>
       <button class="composeButton" type="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
  Compose</button>
@@ -43,12 +44,11 @@
         <form class="tweetForm" action="/tweets/" method="POST">
           <textarea class="textboxArea" name="text" placeholder="What are you humming about?"></textarea>
           <br>
-          <input type="submit" value="Tweet">
+          <input class="tweetButton" type="submit" value="Tweet">
           <span class="counter">140</span>
         </form>
       </section>
-      <section class="tweetsContainer">
-      </section>
+      <section class="tweetsContainer"></section>
     </main>
   </body>
 </html>

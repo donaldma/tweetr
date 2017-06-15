@@ -20,9 +20,9 @@
 
 .composeHeader {
   margin: 10px 0 20px 0;
-  font-family:'Roboto Bold', sans-serif;
+  font-family:'Roboto Condensed', sans-serif;
   color: #00a087;
-  font-size: 22px;
+  font-size: 25px;
   font-weight: bold;
   border-bottom: 1px solid black;
 }
