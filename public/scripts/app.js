@@ -51,7 +51,7 @@ $(document).ready(function() {
   $(".tweetForm").on("submit", function(event) {
     event.preventDefault();
     if($(".textboxArea").val().length > 140 || $(".textboxArea").val().length === 0) {
-      alert('fuck off');
+      alert('something');
     } else {
       $.ajax({
         method: "POST",

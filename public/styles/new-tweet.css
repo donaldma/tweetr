@@ -75,11 +75,11 @@ footer {
   font-size: 12px;
 }
 
-.fa {
-  margin-left: 5px;
-  float: right;
-  visibility: hidden;
+.tweet .fa {
   padding: 0 10px 10px 0;
+  visibility: hidden;
+  float: right;
+  margin-left: 5px;
   color: #00a087;
 }
 
