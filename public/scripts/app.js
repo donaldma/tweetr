@@ -1,4 +1,3 @@
-
 var tweetData = [];
 
 $(document).ready(function() {
@@ -8,14 +7,17 @@ $(document).ready(function() {
     return div.innerHTML;
   }
 
+//function that takes data from db and creates a tweet
+
   function createTweetElement(tweet) {
     var tweetHandle = tweet.user.handle;
     var tweetAvatar = tweet.user.avatars.regular;
     var tweetName = tweet.user.name;
     var tweetContent = escape(tweet.content.text);
     var tweetDate = moment(tweet.created_at).fromNow();
+    var tweetID = tweet._id;
     return `
-    <article class="tweet">
+    <article class="tweet" id="${tweetID}">
       <header>
         <span class="tweetsHandle">${tweetHandle}</span>
         <img class="profileAvatar" src=${tweetAvatar}>
@@ -26,12 +28,17 @@ $(document).ready(function() {
       </p>
       <footer>
         <span class="date">${tweetDate}</span>
-        <i class="fa fa-flag" aria-hidden="true"></i>
-        <i class="fa fa-retweet" aria-hidden="true"></i>
-        <i class="fa fa-heart" aria-hidden="true"></i>
+        <div id="twitterIcons">
+          <span data-id="${tweetID}" class="heartClick"><i class="fa fa-heart" aria-hclassden="true"></i></span>
+          <span class="retweetClick"><i class="fa fa-retweet" aria-hidden="true"></i></span>
+          <span class="flagClick"><i class="fa fa-flag" aria-hidden="true"></i></span>
+        </div>
+          <span class="likeCounter">0</span>
       </footer>
     </article>`;
   }
+
+//loops through data base and prepends the tweet when it is posted
 
   function renderTweets(tweets) {
     $('.tweetsContainer').empty();
@@ -39,7 +46,13 @@ $(document).ready(function() {
       var $tweet = createTweetElement(tweets[i]);
       $('.tweetsContainer').prepend($tweet);
     }
+
+//Calling the like counter function from click-icons.js
+
+    addEventListeners();
   }
+
+//async javascript that posts tweet to server and gets tweets from server db and calls the rendertweets function
 
   function loadTweets() {
     $.ajax({
@@ -70,6 +83,8 @@ $(document).ready(function() {
   });
 
   loadTweets();
+
+//Jquery for compose button toggle
 
   $(".new-tweet").hide();
   $(".composeButton").click(function() {

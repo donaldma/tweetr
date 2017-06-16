@@ -1,3 +1,4 @@
+
 .new-tweet {
   padding: 3px 10px 10px 10px;
   border-radius: 7px;
@@ -76,11 +77,14 @@ footer {
 }
 
 .tweet .fa {
-  padding: 0 10px 10px 0;
-  visibility: hidden;
-  float: right;
   margin-left: 5px;
   color: #00a087;
+}
+
+#twitterIcons {
+  padding: 0 10px 10px 0;
+  float: right;
+  visibility: hidden
 }
 
 .tweet:hover .fa {
@@ -93,4 +97,15 @@ footer {
 
 .tweet:hover header {
   opacity: 1;
+}
+
+.heartClick {
+  cursor: pointer;
+}
+
+.likeCounter {
+  float: right;
+  margin-right: 5px;
+  color: #00a087;
+  visibility: hidden;
 }

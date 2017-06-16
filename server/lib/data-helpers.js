@@ -4,11 +4,11 @@
 module.exports = function makeDataHelpers(db) {
   return {
 
-    // Saves a tweet to `db`
+    // Saves a tweet to `mongodb`
     saveTweet: function(newTweet, callback) {
       db.collection("tweets").insert(newTweet, (callback));
     },
-    // Get all tweets in `db`, sorted by newest first
+    // Get all tweets in `mongodb`
     getTweets: function(callback) {
       db.collection("tweets").find().toArray(callback);
     }
